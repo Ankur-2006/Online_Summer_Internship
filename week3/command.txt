@@ -1,0 +1,94 @@
+WEEK 3 - COMMANDS USED
+
+--------------------------------------------------
+1. OBJECT DETECTION USING YOLOv8
+--------------------------------------------------
+
+Command:
+
+yolo detect predict model=yolov8n.pt source=images/
+
+Purpose:
+Performs object detection on input images.
+
+--------------------------------------------------
+2. VIEW PERFORMANCE METRICS
+--------------------------------------------------
+
+Metrics Location:
+
+runs/detect/train/
+
+Files Observed:
+- results.png
+- confusion_matrix.png
+- PR_curve.png
+- F1_curve.png
+
+Purpose:
+Analyze model accuracy and detection performance.
+
+--------------------------------------------------
+3. SEMANTIC SEGMENTATION USING YOLOv8
+--------------------------------------------------
+
+Command:
+
+yolo segment predict model=yolov8n-seg.pt source=images/
+
+Purpose:
+Performs semantic segmentation on images.
+
+--------------------------------------------------
+4. CREATE VIDEO FROM IMAGES
+--------------------------------------------------
+
+Command:
+
+ffmpeg -framerate 30 -i frame_%04d.jpg -c:v libx264 -pix_fmt yuv420p output.mp4
+
+Purpose:
+Creates video from segmented image frames.
+
+--------------------------------------------------
+5. REMOVE AUDIO FROM VIDEO
+--------------------------------------------------
+
+Command:
+
+ffmpeg -i input.mp4 -an noaudio.mp4
+
+Purpose:
+Removes original audio from video.
+
+--------------------------------------------------
+6. STACK VIDEOS VERTICALLY
+--------------------------------------------------
+
+Command:
+
+ffmpeg -i raw.mp4 -i detect.mp4 -i segment.mp4 -filter_complex vstack=inputs=3 stacked_output.mp4
+
+Purpose:
+Stacks raw, object-detected, and segmented videos vertically.
+
+--------------------------------------------------
+7. ADD BACKGROUND MUSIC
+--------------------------------------------------
+
+Command:
+
+ffmpeg -i stacked_output.mp4 -i music.mp3 -shortest final_output.mp4
+
+Purpose:
+Adds custom soundtrack to final video.
+
+--------------------------------------------------
+TOOLS USED
+--------------------------------------------------
+
+- Ultralytics YOLOv8
+- FFmpeg
+- Python
+- OpenCV
+- Windows CMD / PowerShell
