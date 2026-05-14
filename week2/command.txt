@@ -1,0 +1,41 @@
+WEEK 1 - FFmpeg Commands
+
+----------------------------------------
+TASK 1 - Extract Frames from Video
+----------------------------------------
+
+Command Used:
+
+ffmpeg -i space.mp4 frame_%04d.jpg
+
+Purpose:
+Extracts image frames from the video file "space.mp4".
+
+----------------------------------------
+TASK 2 - Extract Frames at 30 FPS
+----------------------------------------
+
+Command Used:
+
+ffmpeg -i space.mp4 -vf fps=30 frames/frame_%04d.jpg
+
+Purpose:
+Extracts video frames at 30 FPS into the "frames" folder.
+
+----------------------------------------
+TASK 2 - Recreate Video from Frames
+----------------------------------------
+
+Command Used:
+
+ffmpeg -framerate 30 -i frames/frame_%04d.jpg -c:v libx264 -pix_fmt yuv420p output.mp4
+
+Purpose:
+Converts extracted image frames back into a video at 30 FPS.
+
+----------------------------------------
+SYSTEM USED
+----------------------------------------
+
+- Windows CMD / PowerShell
+- FFmpeg

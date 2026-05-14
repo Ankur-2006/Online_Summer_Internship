@@ -1,0 +1,55 @@
+WEEK 1 - TASK SUMMARY
+
+Student Name: Ankur
+Internship: Online Summer Internship 2026
+
+----------------------------------------
+TASK 1
+----------------------------------------
+
+Objective:
+Extract multiple image frames from a video using FFmpeg.
+
+Video Used:
+space.mp4
+
+Work Done:
+- Downloaded/used the video file named "space.mp4"
+- Used FFmpeg commands in Windows CMD
+- Extracted multiple frames from the video successfully
+- Saved frames as JPG images
+
+Output:
+- Multiple extracted images generated successfully
+- Sample images uploaded to GitHub repository
+
+----------------------------------------
+TASK 2
+----------------------------------------
+
+Objective:
+Generate approximately 1800 image frames from a 1-minute video segment at 30 FPS and recreate the video using FFmpeg.
+
+Work Done:
+- Extracted frames at 30 FPS using FFmpeg
+- Generated thousands of image frames
+- Reconstructed the frames back into a video
+- Successfully created output video from extracted images
+
+Output:
+- Recreated video generated successfully
+
+----------------------------------------
+TOOLS USED
+----------------------------------------
+
+- FFmpeg
+- Windows CMD / PowerShell
+- GitHub
+- Google Drive
+
+----------------------------------------
+RESULT
+----------------------------------------
+
+Both Week 1 tasks were completed successfully using FFmpeg commands and video processing techniques.
